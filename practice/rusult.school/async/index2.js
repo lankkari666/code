@@ -1,5 +1,5 @@
 const USERS_URL = "https://jsonplaceholder.typicode.com/users";
-
+const dataContainer = document.querySelector('#data-container')
 const createUser = (text) => {
     const user = document.createElement("li");
     const userAnchor = document.createElement("a");
@@ -9,8 +9,6 @@ const createUser = (text) => {
 
     return user;
 }
-
-const dataContainer = document.querySelector("#data-container");
 
 const toggleLoader = () => {
     const loader = document.querySelector("#loader");
@@ -23,28 +21,27 @@ const toggleLoader = () => {
     }
 }
 
-const getAllUsers = () => {
+const getUsersByIds = (ids) => {
     toggleLoader();
-    const result = fetch(USERS_URL);
-    result
-        .then((res) => {
-            if (!res.ok) {
-                throw new Error("Ошибка")
-            }
-            return res.json();
+    const requests = ids.map((id) => fetch(`${USERS_URL}/${id}`))
+    Promise.all(requests)
+        .then((responses) => {
+            const responsesData = responses.map((response) => response.json());
+            return Promise.all(responsesData);
         })
         .then((users) => {
+            console.log(users)
             users.forEach((user) => {
                 const userHTML = createUser(user.name);
                 dataContainer.append(userHTML);
             })
         })
         .catch((error) => {
-            console.log("error", error);
+            console.log(error);
         })
         .finally(() => {
             toggleLoader();
         });
-};
+}
 
-getAllUsers();
+getUsersByIds([5, 6, 2, 1]);
