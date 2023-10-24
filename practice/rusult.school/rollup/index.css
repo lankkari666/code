@@ -1,0 +1,11 @@
+body {
+    background: black;
+    padding: 20px;
+    margin: 20px;
+    color: aliceblue;
+}
+
+.js-image {
+    max-width: 200px;
+    max-height: 200px;
+}

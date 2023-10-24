@@ -1,0 +1,21 @@
+{
+  "name": "webpack_rollup",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "prod": "rollup -c"
+  },
+  "author": "Savva Okulenko",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.23.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "rollup-plugin-img": "^1.1.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^2.0.2",
+    "rollup-plugin-styles": "^4.0.0"
+  }
+}
