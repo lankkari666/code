@@ -4,7 +4,8 @@
 	--hover-text: #222;
 	--button-background: #fff;
 	--button-background-hover: #000;
-	--button-text: #007af7;	
+	--button-text: #007af7;
+	--white-color: white;
 }
 
 *, *::after, *::before {
