@@ -86,3 +86,22 @@ function getRandomColor() {
     }
     return color;
 }
+
+function win() {
+    function kill() {
+        const circle = document.querySelector('.circle')
+        if (circle) {
+            circle.click()
+        }
+    }
+    setInterval(kill, 1)
+}
+// function win() {
+//     function kill() {
+//         const circle = document.querySelector('#bigCookie')
+//         if (circle) {
+//             circle.click()
+//         }
+//     }
+//     setInterval(kill, 42)
+// }
