@@ -4,6 +4,12 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-    width: 50px;
-    height: 66px;
+    width: 150px;
+    height: 150px;
+    align-items: center
+}
+
+.square:hover {
+    background-color: rgba(187, 187, 187, 0.1);
+    transition: all ease .3s;
 }
