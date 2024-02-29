@@ -1,13 +1,14 @@
-import styles from './Field.module.css';
 import Square from '../Square/Square.jsx';
-import { useState } from 'react';
+import styles from './Field.module.css';
+import { winPattern } from '../../utils/winPattern.js';
+
 
 const Field = () => {
-	const [squares, setSquares] = useState(Array(9).fill(null));
-	const [xIsNext, setXIsNext] = useState(true);
+	// const [squares, setSquares] = useState(createEmptyField);
+	// const [xIsNext, setXIsNext] = useState(true);
 
 	function handleClick(i) {
-		if (squares[i] || calculateWinner(squares)) {
+		if (squares[i] || winPattern(squares)) {
 			return;
 		}
 		const nextSquares = squares.slice();
@@ -20,7 +21,7 @@ const Field = () => {
 		setXIsNext(!xIsNext);
 	}
 
-	const winner = calculateWinner(squares);
+	const winner = winPattern(squares);
 	let status;
 	if (winner) {
 		status = 'Победитель: ' + winner;
@@ -48,24 +49,5 @@ const Field = () => {
 	);
 };
 
-const calculateWinner = (squares) => {
-	const lines = [
-		[0, 1, 2],
-		[3, 4, 5],
-		[6, 7, 8],
-		[0, 3, 6],
-		[1, 4, 7],
-		[2, 5, 8],
-		[0, 4, 8],
-		[2, 4, 6]
-	];
-	for (let i = 0; i < lines.length; i++) {
-		const [a, b, c] = lines[i];
-		if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-			return squares[a];
-		}
-	}
-	return null;
-};
 
 export default Field;

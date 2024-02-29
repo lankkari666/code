@@ -9,13 +9,13 @@ const App = () => {
 			'=': 'equals',
 			'-': 'opt',
 			'+': 'opt',
-			'C': 'clean',
+			'C': 'clean'
 		};
 		return className[btn];
 	};
 
 	const NUMS = [
-		'C', '+', '-', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '=',
+		'C', '+', '-', 7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '='
 	];
 
 	const [operand1, setOperand1] = useState('');
@@ -65,12 +65,12 @@ const App = () => {
 				<div className={styles.buttons}>
 					{NUMS.map((btn, i) => (
 						<button key={i} onClick={() => handleButtonClick(btn)}
-								className={
-									`
+										className={
+											`
 									${styles.button}
 									${styles[getStyleName(btn)]}
 									`
-								}>
+										}>
 							{btn}
 						</button>
 					))}
@@ -80,51 +80,3 @@ const App = () => {
 	);
 };
 export default App;
-
-// import { createContext} from 'react';
-//
-// const btnValues = [
-// 	['C', '%', '/'],
-// 	[7, 8, 9, 'x'],
-// 	[4, 5, 6, '-'],
-// 	[1, 2, 3, '+'],
-// 	[0, '.', '='],
-// ];
-//
-// const getStyleName = btn => {
-// 	const className = {
-// 		'=': 'equals',
-// 		'x': 'opt',
-// 		'-': 'opt',
-// 		'+': 'opt',
-// 		'/': 'opt',
-// 		'C': 'clean',
-// 	};
-// 	return className[btn];
-// };
-//
-// const calcContext = createContext();
-// const calcProvider = () => {
-//
-// }
-//
-// const App = () => {
-//
-// 	return (
-// 		<>
-// 			<div className={styles.wrapper}>
-// 				<div className={styles.screen}>
-//
-// 				</div>
-// 				<div className={styles.btnBox}>
-// 					{btnValues.flat().map((btn, i) => (
-// 						<button onClick={handleBtnClick} className={`${styles.btn} ${styles[getStyleName(btn)]}`}
-// 								value={btn} key={i}>{btn}</button>
-// 					))}
-// 				</div>
-// 			</div>
-// 		</>
-// 	);
-// };
-//
-// export default App;
