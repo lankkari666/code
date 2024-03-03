@@ -1,26 +1,10 @@
-export const actions = {
-	SET_FIELD: 'SET_FIELD',
-	STATE_RESET: 'STATE_RESET',
-	SET_CURRENT_PLAYER: 'SET_CURRENT_PLAYER'
-};
+export const MAKE_MOVE = 'MAKE_MOVE';
+export const START_NEW_GAME = 'START_NEW_GAME';
 
-export const setField = (payload) => {
-	return {
-		type: actions.SET_FIELD,
-		payload
-	};
-};
+export function makeMove(index, value) {
+	return { type: MAKE_MOVE, index, value };
+}
 
-export const stateReset = (payload) => {
-	return {
-		type: actions.STATE_RESET,
-		payload
-	};
-};
-
-export const setCurrentPlayer = (payload) => {
-	return {
-		type: actions.SET_CURRENT_PLAYER,
-		payload
-	};
-};
+export function startNewGame() {
+	return { type: START_NEW_GAME };
+}
