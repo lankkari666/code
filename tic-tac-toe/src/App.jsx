@@ -1,16 +1,11 @@
-import styles from './App.module.css'
-import Field from './components/Filed/Field.jsx'
+import React from 'react';
+import { Game } from './components/Game';
+import './App.css'
 
-const App = () => {
+export function App() {
 	return (
-		<>
-			<div className={styles.app}>
-				<h1 className={styles.tittle}> X / O</h1>
-				<Field>
-				</Field>
-			</div>
-		</>
+		<React.StrictMode>
+			<Game/>
+		</React.StrictMode>
 	);
-};
-
-export default App;
+}

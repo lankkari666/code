@@ -1,0 +1,15 @@
+.fontsize {
+	font-size: 50px;
+	color: #fff;
+}
+.header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+.restart {
+	border: none;
+	width: 200px;
+	font-size: 20px;
+	border-radius: 25px;
+}
